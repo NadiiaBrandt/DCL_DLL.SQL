@@ -8,3 +8,22 @@ CREATE TABLE TestSchema.TestTable
  IsSold BIT,
  InvoiceDate DATE);
 GO
+
+USE TestDb
+GO
+INSERT INTO TestSchema.TestTable
+VALUES
+(1, 'Boat', 1, '2020-11-08'),
+(2,'Auto', 0, '2020-11-09'),
+(3,'Plane', null, '2020-12-09')
+GO
+
+CREATE USER TestUser WITH PASSWORD='Cheb0ks@ry'
+GO
+GRANT CONNECT TO TestUser	
+GO
+GRANT SELECT ON TestTable TO TestUser 
+GO
+SELECT CURRENT_USER
+GO
+DROP USER TestUser
