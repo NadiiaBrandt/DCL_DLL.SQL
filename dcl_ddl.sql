@@ -18,8 +18,7 @@ VALUES
 (1, 'Boat', 1, '2020-11-08'),
 (2,'Auto', 0, '2020-11-09'),
 (3,'Plane', null, '2020-12-09')
-GO
-USE TestDb
+
 GO
 EXEC sp_configure 'CONTAINED DATABASE AUTHENTICATION', 1;
 GO
@@ -30,7 +29,8 @@ GO
 ALTER DATABASE TestDb SET CONTAINMENT = PARTIAL;
 GO
 
-
+USE TestDb
+GO
 CREATE USER TestUser WITH PASSWORD='Cheb0ks@ry'
 GO
 GRANT CONNECT TO TestUser	
